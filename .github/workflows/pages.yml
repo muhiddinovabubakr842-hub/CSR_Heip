@@ -26,6 +26,7 @@ jobs:
           mkdir _site
           cp -R web/. _site/
           cp web/guest.html _site/index.html
+          sed -i -e 's|href="/|href="|g' -e 's|src="/|src="|g' _site/index.html
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
